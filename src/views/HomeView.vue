@@ -9,7 +9,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import HelloWorld from '@/components/HelloWorld.vue';
-import user from '@/store/user'; // @ is an alias to /src
+
+// eslint-disable-next-line import/named
+import { useUserStore } from '@/store/user'; // @ is an alias to /src
 
 export default defineComponent({
   name: 'HomeView',
@@ -17,7 +19,7 @@ export default defineComponent({
     HelloWorld,
   },
   setup() {
-    const userStore = user();
+    const userStore = useUserStore();
 
     return {
       userStore,
